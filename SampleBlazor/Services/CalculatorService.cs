@@ -13,13 +13,44 @@ namespace SampleBlazor.Services
 
         public int Add(int a, int b)
         {
-            _logger.LogInformation("Add method called with values {A} and {B}", a, b);
+            _logger.LogInformation("Adding {A} and {B}", a, b);
 
-            var result = a + b;
+            return a + b;
+        }
 
-            _logger.LogInformation("Addition result is {Result}", result);
+        public int Subtract(int a, int b)
+        {
+            _logger.LogInformation("Subtracting {B} from {A}", b, a);
 
-            return result;
+            return a - b;
+        }
+
+        public int Multiply(int a, int b)
+        {
+            _logger.LogInformation("Multiplying {A} and {B}", a, b);
+
+            return a * b;
+        }
+
+        public double Divide(int a, int b)
+        {
+            _logger.LogInformation("Dividing {A} by {B}", a, b);
+
+            if (b == 0)
+            {
+                _logger.LogError("Division by zero attempted");
+
+                throw new DivideByZeroException("Cannot divide by zero");
+            }
+
+            return (double)a / b;
+        }
+
+        public bool IsEven(int number)
+        {
+            _logger.LogInformation("Checking whether {Number} is even", number);
+
+            return number % 2 == 0;
         }
     }
 }
