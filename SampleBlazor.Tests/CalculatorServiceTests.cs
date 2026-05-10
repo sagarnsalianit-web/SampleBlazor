@@ -70,6 +70,10 @@ namespace SampleBlazor.Tests
             var logger = LoggerFactory
                 .Create(builder => { })
                 .CreateLogger<CalculatorService>();
+            var logger1 = LoggerFactory
+                .Create(builder => { })
+                .CreateLogger<CalculatorService>();
+
 
             var service = new CalculatorService(logger);
 
