@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/azure-static-web-apps-calm-meadow-031ad3200.yml" />
+  </Folder>
   <Project Path="SampleBlazor.Tests/SampleBlazor.Tests.csproj" />
   <Project Path="SampleBlazor/SampleBlazor.csproj" />
 </Solution>

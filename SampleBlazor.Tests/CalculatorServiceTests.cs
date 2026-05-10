@@ -1,4 +1,5 @@
-﻿using SampleBlazor.Services;
+﻿using Microsoft.Extensions.Logging;
+using SampleBlazor.Services;
 using Xunit;
 
 namespace SampleBlazor.Tests
@@ -9,7 +10,11 @@ namespace SampleBlazor.Tests
         public void Add_ShouldReturnCorrectResult()
         {
             // Arrange
-            var service = new CalculatorService();
+            var logger = LoggerFactory
+     .Create(builder => { })
+     .CreateLogger<CalculatorService>();
+
+            var service = new CalculatorService(logger);
 
             // Act
             var result = service.Add(5, 3);
