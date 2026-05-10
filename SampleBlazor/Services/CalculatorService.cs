@@ -21,5 +21,14 @@ namespace SampleBlazor.Services
 
             return result;
         }
+        public bool CheckValue(bool isValid)
+        {
+            if (isValid == true)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

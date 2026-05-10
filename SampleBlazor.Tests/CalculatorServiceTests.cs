@@ -14,6 +14,7 @@ namespace SampleBlazor.Tests
      .Create(builder => { })
      .CreateLogger<CalculatorService>();
 
+
             var service = new CalculatorService(logger);
 
             // Act
