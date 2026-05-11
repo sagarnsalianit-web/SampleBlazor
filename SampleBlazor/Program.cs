@@ -16,6 +16,7 @@ builder.Services.AddScoped(sp =>
 
 // ADD THIS LINE
 builder.Services.AddScoped<CalculatorService>();
+builder.Services.AddScoped<IWeatherService, IndianWeatherService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 
 await builder.Build().RunAsync();
