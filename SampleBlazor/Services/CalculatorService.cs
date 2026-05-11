@@ -52,5 +52,14 @@ namespace SampleBlazor.Services
 
             return number % 2 == 0;
         }
+        public bool CheckValue(bool isValid)
+        {
+            if (isValid == true)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
