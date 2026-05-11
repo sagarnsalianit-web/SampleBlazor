@@ -1,0 +1,38 @@
+@page "/ipl"
+@inject HttpClient Http
+
+<h3>IPL Live Score</h3>
+@if (score == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <p>@score</p>
+}
+
+@code {
+    private string? score;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Replace with your real API endpoint and key
+        try
+        {
+            // Example placeholder API (replace with a real IPL API endpoint)
+            var response = await Http.GetAsync("https://api.example.com/ipl/live?apikey=YOUR_API_KEY");
+            if (response.IsSuccessStatusCode)
+            {
+                score = await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                score = "Unable to fetch IPL score.";
+            }
+        }
+        catch
+        {
+            score = "Error fetching IPL score.";
+        }
+    }
+}
